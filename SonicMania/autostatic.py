@@ -150,9 +150,13 @@ def deduce(delim):
 debugMode   = False if len(sys.argv) < 5 else sys.argv[4] == "debug"
 plus        = len(sys.argv) < 4 or sys.argv[3] == "plus"
 folder      = "" if len(sys.argv) < 3 else sys.argv[2]
+folderSub   = "Plus" if plus else "PrePlus"
 staticCount = 0
 
-try: os.mkdir(f"{folder}Static")
+try: os.mkdir(f"{folder}{folderSub}")
+except: pass
+
+try: os.mkdir(f"{folder}{folderSub}/Static")
 except: pass
 
 for path in Path(sys.argv[1]).rglob("*.h"):
@@ -307,13 +311,13 @@ for key in objects:
         if debugMode:
             print(f"Building Object: '{key} [{hash}]'")
 
-        with open(f"{folder}Static/{hash}.bin", "wb") as file:
+        with open(f"{folder}{folderSub}/Static/{hash}.bin", "wb") as file:
             file.write(b)
             file.close()
             staticCount = staticCount + 1
                 
 
-print(f"Built {staticCount} Static Objects in: {folder}Static/")
+print(f"Built {staticCount} Static Objects in: {folder}{folderSub}/Static/")
 
 
 

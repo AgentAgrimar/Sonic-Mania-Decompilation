@@ -1959,7 +1959,8 @@
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(OutDir)Game.dll" "$(SolutionDir)build\Game.dll"
-"$(ProjectDir)buildstaticv1.bat"</Command>
+"$(ProjectDir)buildstaticv1.bat"
+del "$(SolutionDir)build\Game.dll"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Building Static Object Files...</Message>

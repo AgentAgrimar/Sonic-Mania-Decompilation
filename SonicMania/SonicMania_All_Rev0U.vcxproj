@@ -4381,27 +4381,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\</OutDir>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\</OutDir>
     <TargetName>Game</TargetName>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\Intermediate\</IntDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\</OutDir>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\</OutDir>
     <TargetName>Game</TargetName>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\Intermediate\</IntDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\</OutDir>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\</OutDir>
     <TargetName>Game</TargetName>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\Intermediate\</IntDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\</OutDir>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\</OutDir>
     <TargetName>Game</TargetName>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\Intermediate\</IntDir>
+    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\Game\v5U\Intermediate\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -4420,7 +4420,8 @@
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(OutDir)Game.dll" "$(SolutionDir)build\Game.dll"
-"$(ProjectDir)buildstatic.bat"</Command>
+"$(ProjectDir)buildstatic.bat"
+del "$(SolutionDir)build\Game.dll"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Building Static Object Files...</Message>
